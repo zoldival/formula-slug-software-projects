@@ -1,7 +1,6 @@
 # Workshop #2, Create a more complex Graph (Doing a Heat Map)
 import polars as pl 
 import matplotlib.pyplot as plt
-import numpy as np
 
 # reads the provided data file into a data frame 
 df = pl.read_parquet('software-data/08102025Endurance1_FirstHalf.parquet') # df data frame
@@ -12,11 +11,11 @@ print(df.columns) # prints the column names which we selected
 
 # convert the polars (pl) colymns to numpy arrays for easier manipulation since matplotlib works better with numpy
 
-Speed = df["VDM_GPS_SPEED"].to_numpy()
-Latitude = df["VDM_GPS_Latitude"].to_numpy()
-Longitude = df["VDM_GPS_Longitude"].to_numpy()
-RTDS = df["ETC_STATUS_RTDS"].to_numpy()
-V_Pack = df["ACC_POWER_PACK_VOLTAGE"].to_numpy()
+Speed = df["VDM_GPS_SPEED"]
+Latitude = df["VDM_GPS_Latitude"]
+Longitude = df["VDM_GPS_Longitude"]
+RTDS = df["ETC_STATUS_RTDS"]
+V_Pack = df["ACC_POWER_PACK_VOLTAGE"]
 
 # figure creator similar to workshop 1 
 
@@ -44,6 +43,5 @@ ax2.set_xlabel("Longitude") # sets the x label for the second subplot
 ax2.set_ylabel("Latitude") # sets the y label for the second subplot
 ax2.set_title("Track Map — Speed Heatmap") # sets the title for the heatmap
 ax2.grid(alpha=0.3) # adds a grid to the second subplot with some transparency (thats what alpha does)
-
 
 plt.show()
