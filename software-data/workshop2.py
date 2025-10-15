@@ -26,7 +26,7 @@ ax2 = fig.add_subplot(222) # adds another subplot to the figure
 ax3 = fig.add_subplot(223) # adds another subplot to the figure
 ax4 = fig.add_subplot(224) # adds another subplot to the figure
 
-# top-lef plot: speed signal (how i had it on workshop 1)
+# top-left plot: speed signal (how i had it on workshop 1)
 
 ax1.plot(Speed, label = "Speed") # plots the engine RPM and the data frame comes from the collumn
 ax1.plot(RTDS, label = "RTDS") # plots the throttle position and the data frame comes from the collumn
@@ -35,3 +35,7 @@ ax1.set_title("Speed and RTDS") # sets the title for the first subplot
 ax1.legend() # adds a legend to the first subplot
 ax1.grid() # adds a grid to the first subplot
 # wow im abusing the word subplot but this is for my own clarity 
+
+# top-right plot: tracks the heatmap colored by speed where the car is fast or slow
+sc = ax2.scatter(Longitude, Latitude, c=Speed, cmap='viridis', s=1) # creates a scatter (sc) plot with the longitude and latitude and colors it by speed
+cb = fig.colorbar(sc, ax=ax2) # adds a color bar to the scatter plot
