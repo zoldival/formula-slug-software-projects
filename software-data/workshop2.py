@@ -39,3 +39,11 @@ ax1.grid() # adds a grid to the first subplot
 # top-right plot: tracks the heatmap colored by speed where the car is fast or slow
 sc = ax2.scatter(Longitude, Latitude, c=Speed, cmap='viridis', s=1) # creates a scatter (sc) plot with the longitude and latitude and colors it by speed
 cb = fig.colorbar(sc, ax=ax2) # adds a color bar to the scatter plot
+cb.set_label('Speed (MPH)') # sets the label for the color bar
+ax2.set_xlabel("Longitude") # sets the x label for the second subplot
+ax2.set_ylabel("Latitude") # sets the y label for the second subplot
+ax2.set_title("Track Map — Speed Heatmap") # sets the title for the heatmap
+ax2.grid(alpha=0.3) # adds a grid to the second subplot with some transparency (thats what alpha does)
+
+
+plt.show()
