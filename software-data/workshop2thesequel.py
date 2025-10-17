@@ -1,4 +1,4 @@
-# Workshop #2, Create a more complex Graph (Doing a Heat Map)
+# Workshop #2, Create a more complex Graph (Doing just a Heat Map thank you Nathaniel)
 import polars as pl 
 import matplotlib.pyplot as plt
 
